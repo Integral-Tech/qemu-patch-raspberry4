@@ -49,7 +49,7 @@ bool ebpf_rss_load(struct EBPFRSSContext *ctx)
         goto error;
     }
 
-    bpf_program__set_socket_filter(rss_bpf_ctx->progs.tun_rss_steering_prog);
+    bpf_program__set_log_level(rss_bpf_ctx->progs.tun_rss_steering_prog, 0);
 
     if (rss_bpf__load(rss_bpf_ctx)) {
         trace_ebpf_error("eBPF RSS", "can not load RSS program");
