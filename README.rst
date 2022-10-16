@@ -55,7 +55,7 @@ of other UNIX targets. The simple steps to build QEMU are:
   mkdir build
   cd build
   ../configure
-  make
+  make -j `nproc`
 
 Additional information can also be found online via the QEMU website:
 
